@@ -1,0 +1,81 @@
+-- Insert statements for Hotels Table
+INSERT INTO Hotels (hotel_id, hotel_name) VALUES
+(1, 'Hotel A'),
+(2, 'Hotel B'),
+(3, 'Hotel C'),
+(4, 'Hotel D'),
+(5, 'Hotel E'),
+(6, 'Hotel F'),
+(7, 'Hotel G'),
+(8, 'Hotel H');
+
+-- Insert statements for Countries Table
+INSERT INTO Countries (country_id, country_name) VALUES
+(1, 'Country A'),
+(2, 'Country B'),
+(3, 'Country C'),
+(4, 'Country D'),
+(5, 'Country E'),
+(6, 'Country F'),
+(7, 'Country G'),
+(8, 'Country H');
+
+-- Insert statements for RoomTypes Table
+INSERT INTO RoomTypes (room_type_id, room_type) VALUES
+(1, 'Single Room'),
+(2, 'Double Room'),
+(3, 'Suite'),
+(4, 'Executive Suite'),
+(5, 'Deluxe Room'),
+(6, 'Standard Room'),
+(7, 'Family Room'),
+(8, 'Presidential Suite');
+
+-- Insert statements for MealTypes Table
+INSERT INTO MealTypes (meal_type_id, meal_type) VALUES
+(1, 'Breakfast'),
+(2, 'No Meals'),
+(3, 'Dinner'),
+(4, 'Lunch'),
+(5, 'All-Inclusive'),
+(6, 'Buffet'),
+(7, 'Room Service'),
+(8, 'Snacks');
+
+-- Insert statements for MarketSegments Table
+INSERT INTO MarketSegments (segment_id, market_segment) VALUES
+(1, 'Corporate'),
+(2, 'Leisure'),
+(3, 'Group'),
+(4, 'Online Travel Agents'),
+(5, 'Direct'),
+(6, 'Offline Travel Agents'),
+(7, 'Complimentary'),
+(8, 'Undefined');
+
+-- Insert statements for DepositTypes Table
+INSERT INTO DepositTypes (deposit_type_id, deposit_type) VALUES
+(1, 'No Deposit'),
+(2, 'Non-Refundable'),
+(3, 'Refundable'),
+(4, 'Undefined');
+
+-- Insert statements for Guests Table
+INSERT INTO Guests (guest_id, name, email, phone_number, credit_card) VALUES
+(1, 'Guest A', 'guestA@email.com', '1234567890', '1234-5678-9012-3456'),
+(2, 'Guest B', 'guestB@email.com', '9876543210', '5678-9012-3456-7890'),
+(3, 'Guest C', 'guestC@email.com', '2345678901', '9012-3456-7890-1234'),
+(4, 'Guest D', 'guestD@email.com', '8765432109', '3456-7890-1234-5678'),
+(5, 'Guest E', 'guestE@email.com', '3456789012', '7890-1234-5678-9012'),
+(6, 'Guest F', 'guestF@email.com', '6789012345', '2345-6789-0123-4567'),
+(7, 'Guest G', 'guestG@email.com', '4567890123', '6789-0123-4567-8901'),
+(8, 'Guest H', 'guestH@email.com', '7890123456', '1234-5678-9012-3456');
+
+-- Insert statements for Bookings Table
+INSERT INTO Bookings (booking_id, is_canceled, lead_time, arrival_date_year, arrival_date_month, arrival_date_week_number, arrival_date_day_of_month, stays_in_weekend_nights, stays_in_week_nights, adults, children, babies, meal, country_id, market_segment_id, deposit_type_id, guest_id, room_type_id, meal_type_id) VALUES
+(1, FALSE, 15, 2022, 'January', 3, 5, 1, 2, 2, 0, 1, 'Breakfast', 1, 1, 1, 1, 1, 1),
+(2, TRUE, 30, 2022, 'February', 8, 10, 2, 4, 1, 1, 0, 'No Meals', 2, 2, 2, 2, 2, 2),
+(3, FALSE, 10, 2022, 'March', 12, 15, 0, 5, 2, 1, 2, 'Dinner', 3, 3, 3, 3, 3, 3),
+(4, TRUE, 25, 2022, 'April', 20, 25, 3, 3, 1, 0, 1, 'Breakfast', 4, 4, 4, 4, 4, 4),
+(5, FALSE, 5, 2022, 'May', 5, 8, 1, 2, 2, 0, 1, 'Lunch', 5, 5, 5, 5, 5, 5),
+(6, TRUE, 18, 2022, 'June', 15, 20, 2, 3, 1, 

@@ -1,0 +1,75 @@
+-- Create Hotels Table
+CREATE TABLE Hotels (
+  hotel_id INT PRIMARY KEY,
+  hotel_name VARCHAR(255)
+);
+
+-- Create Countries Table
+CREATE TABLE Countries (
+  country_id INT PRIMARY KEY,
+  country_name VARCHAR(255)
+);
+
+-- Create RoomTypes Table
+CREATE TABLE RoomTypes (
+  room_type_id INT PRIMARY KEY,
+  room_type VARCHAR(255)
+);
+
+-- Create MealTypes Table
+CREATE TABLE MealTypes (
+  meal_type_id INT PRIMARY KEY,
+  meal_type VARCHAR(255)
+);
+
+-- Create MarketSegments Table
+CREATE TABLE MarketSegments (
+  segment_id INT PRIMARY KEY,
+  market_segment VARCHAR(255)
+);
+
+-- Create DepositTypes Table
+CREATE TABLE DepositTypes (
+  deposit_type_id INT PRIMARY KEY,
+  deposit_type VARCHAR(255)
+);
+
+-- Create Guests Table
+CREATE TABLE Guests (
+  guest_id INT PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  phone_number VARCHAR(20),
+  credit_card VARCHAR(16)
+);
+
+-- Create Bookings Table
+CREATE TABLE Bookings (
+  booking_id INT PRIMARY KEY,
+  is_canceled BOOLEAN,
+  lead_time INT,
+  arrival_date_year INT,
+  arrival_date_month VARCHAR(20),
+  arrival_date_week_number INT,
+  arrival_date_day_of_month INT,
+  stays_in_weekend_nights INT,
+  stays_in_week_nights INT,
+  adults INT,
+  children INT,
+  babies INT,
+  meal VARCHAR(255),
+  country_id INT,
+  market_segment_id INT,
+  deposit_type_id INT,
+  guest_id INT,
+  room_type_id INT,
+  meal_type_id INT,
+  PRIMARY KEY (booking_id),
+  FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id),
+  FOREIGN KEY (country_id) REFERENCES Countries(country_id),
+  FOREIGN KEY (room_type_id) REFERENCES RoomTypes(room_type_id),
+  FOREIGN KEY (meal_type_id) REFERENCES MealTypes(meal_type_id),
+  FOREIGN KEY (market_segment_id) REFERENCES MarketSegments(segment_id),
+  FOREIGN KEY (deposit_type_id) REFERENCES DepositTypes(deposit_type_id),
+  FOREIGN KEY (guest_id) REFERENCES Guests(guest_id)
+);
